@@ -1,3 +1,5 @@
+const startListeningTimestamp = Date.now();
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
 import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
 
@@ -92,11 +94,11 @@ recordBtn.addEventListener("mouseleave", () => {
 
 onChildAdded(messagesRef, snapshot => {
   const message = snapshot.val();
-  if (message.audio) {
-    // شغل الصوت فقط إذا لم يكن من المرسل نفسه
+  if (message.audio && message.timestamp >= startListeningTimestamp) {
     if (message.senderId !== clientId) {
       const audio = new Audio(message.audio);
       audio.play();
     }
   }
 });
+
