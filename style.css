@@ -1,37 +1,38 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: white;
-    font-family: Arial, sans-serif;
+body, html {
+  margin: 0;
+  height: 100%;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
 }
 
 #recordBtn {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: none;
-    background-color: red;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s;
+  width: 120px;
+  height: 120px;
+  background-color: red;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255,0,0,0.7);
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  color: white;
 }
 
 #recordBtn:active {
-    background-color: darkred;
+  background-color: darkred;
+  box-shadow: 0 0 20px rgba(139,0,0,1);
 }
 
 #status {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
 }
